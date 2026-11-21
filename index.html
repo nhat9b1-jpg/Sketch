@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Design Sketch Demo (Option 2: Template) | Web Design Capstone</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to Main Content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <span class="badge">WD4E Capstone • Week 2 • Option 2</span>
+        <h1>Design Sketch Demo: Portfolio from a Template</h1>
+        <p class="subtitle">Responsive wireframe blueprint &amp; customization plan for a multi-page personal developer portfolio.</p>
+      </div>
+      <nav aria-label="Primary sections">
+        <ul class="nav-list">
+          <li><a href="#overview">Overview</a></li>
+          <li><a href="#wireframes">3-View Wireframes</a></li>
+          <li><a href="#customizations">Template Changes</a></li>
+          <li><a href="#standards">Design &amp; A11y</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content" class="container">
+    <!-- SECTION 1: PROJECT & TEMPLATE OVERVIEW -->
+    <section id="overview" class="card-section" aria-labelledby="overview-heading">
+      <h2 id="overview-heading">1. Project Overview &amp; Base Template Attribution</h2>
+      <p>
+        This portfolio site will showcase my computer science coursework, software engineering projects, and technical skills.
+        Following <strong>Option 2</strong>, I selected an open-source responsive template as a structural starting point and planned substantial
+        layout, visual, functional, and accessibility upgrades.
+      </p>
+
+      <div class="meta-grid">
+        <article class="meta-box">
+          <h3>Portfolio Topic</h3>
+          <p><strong>Personal Developer Portfolio</strong> (4 interconnected pages: Home, About, Projects, and Contact).</p>
+        </article>
+        <article class="meta-box">
+          <h3>Original Base Template</h3>
+          <p>
+            <a href="https://startbootstrap.com/theme/freelancer" target="_blank" rel="noopener noreferrer">Start Bootstrap – Freelancer (MIT License)</a>.
+            Originally a single-page layout; I will refactor it into a semantic 4-page website.
+          </p>
+        </article>
+        <article class="meta-box">
+          <h3>Target Breakpoints</h3>
+          <ul>
+            <li><strong>Mobile:</strong> Default (up to 767px)</li>
+            <li><strong>Tablet:</strong> 768px to 1023px</li>
+            <li><strong>Desktop:</strong> 1024px and above</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- SECTION 2: INTERACTIVE 3-PLATFORM WIREFRAMES -->
+    <section id="wireframes" class="card-section" aria-labelledby="wireframes-heading">
+      <div class="section-head">
+        <div>
+          <h2 id="wireframes-heading">2. Interactive Design Sketches (3 Responsive Views)</h2>
+          <p>Select a planned page below to inspect how its layout adapts across <strong>Mobile</strong>, <strong>Tablet</strong>, and <strong>Desktop</strong> screens.</p>
+        </div>
+
+        <div class="page-switcher" role="group" aria-label="Select wireframe page">
+          <button type="button" class="switch-btn active" data-page="home" aria-pressed="true">Page 1: Home</button>
+          <button type="button" class="switch-btn" data-page="about" aria-pressed="false">Page 2: About</button>
+          <button type="button" class="switch-btn" data-page="projects" aria-pressed="false">Page 3: Projects</button>
+          <button type="button" class="switch-btn" data-page="contact" aria-pressed="false">Page 4: Contact</button>
+        </div>
+      </div>
+
+      <p id="page-description" class="page-note" aria-live="polite">
+        <strong>Home Page Plan:</strong> Introduces the portfolio with a sticky navigation bar, hero introduction, featured projects preview (1-col on mobile, 2-col on tablet, 3-col on desktop), and a sticky footer.
+      </p>
+
+      <div class="wireframe-stage">
+        <!-- MOBILE WIREFRAME -->
+        <article class="device-card">
+          <div class="device-header">
+            <h3>Mobile View</h3>
+            <span class="viewport-tag">375px • 1-Column Stack</span>
+          </div>
+          <div class="device-frame mobile-frame" aria-label="Mobile wireframe preview">
+            <div class="wf-bar">
+              <span class="wf-logo">LOGO</span>
+              <span class="wf-burger" aria-hidden="true">&#9776; Menu</span>
+            </div>
+            <div class="wf-canvas" id="wf-mobile"></div>
+            <div class="wf-footer">Sticky Footer • Social Icons</div>
+          </div>
+          <ul class="layout-notes" id="notes-mobile">
+            <li>Collapsible hamburger menu to save vertical space.</li>
+            <li>All cards and sections stack in a single column (100% width).</li>
+            <li>Touch targets sized at least 44x44px.</li>
+          </ul>
+        </article>
+
+        <!-- TABLET WIREFRAME -->
+        <article class="device-card">
+          <div class="device-header">
+            <h3>Tablet View</h3>
+            <span class="viewport-tag">768px • 2-Column Grid</span>
+          </div>
+          <div class="device-frame tablet-frame" aria-label="Tablet wireframe preview">
+            <div class="wf-bar">
+              <span class="wf-logo">LOGO</span>
+              <span class="wf-links">Home | About | Projects | Contact</span>
+            </div>
+            <div class="wf-canvas" id="wf-tablet"></div>
+            <div class="wf-footer">Sticky Footer • Links + Copyright</div>
+          </div>
+          <ul class="layout-notes" id="notes-tablet">
+            <li>Horizontal top navigation replaces the mobile hamburger icon.</li>
+            <li>Content grids expand to 2 balanced columns using CSS Grid.</li>
+            <li>Increased padding and readable line lengths (60–75 chars).</li>
+          </ul>
+        </article>
+
+        <!-- DESKTOP WIREFRAME -->
+        <article class="device-card desktop-card">
+          <div class="device-header">
+            <h3>Desktop / Large Screen View</h3>
+            <span class="viewport-tag">1200px+ • Multi-Column &amp; Max-Width Container</span>
+          </div>
+          <div class="device-frame desktop-frame" aria-label="Desktop wireframe preview">
+            <div class="wf-browser-dots" aria-hidden="true">
+              <span></span><span></span><span></span>
+            </div>
+            <div class="wf-bar">
+              <span class="wf-logo">PORTFOLIO LOGO</span>
+              <span class="wf-links">Home &nbsp; About &nbsp; Projects &nbsp; Contact &nbsp; [Theme]</span>
+            </div>
+            <div class="wf-canvas" id="wf-desktop"></div>
+            <div class="wf-footer">Sticky Footer • Navigation Echo • Social Links • Attribution</div>
+          </div>
+          <ul class="layout-notes" id="notes-desktop">
+            <li>Content centered inside a max-width 1200px container for scanability.</li>
+            <li>Split hero / sidebar layouts and 3-column project gallery grid.</li>
+            <li>Enhanced hover/focus states and keyboard-accessible interactive modals.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- SECTION 3: TEMPLATE CUSTOMIZATION PLAN -->
+    <section id="customizations" class="card-section" aria-labelledby="custom-heading">
+      <h2 id="custom-heading">3. Planned Modifications to the Base Template</h2>
+      <p>To meet Option 2 criteria, the base template will be heavily customized rather than used as-is:</p>
+
+      <div class="table-wrap">
+        <table>
+          <caption>Comparison between the original Start Bootstrap template and my planned Capstone implementation</caption>
+          <thead>
+            <tr>
+              <th scope="col">Aspect</th>
+              <th scope="col">Original Template</th>
+              <th scope="col">Planned Customization (My Capstone Site)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Site Architecture</th>
+              <td>Single-page scrolling landing page with anchor links.</td>
+              <td>Expanded into <strong>4 separate HTML5 pages</strong> (<code>index.html</code>, <code>about.html</code>, <code>projects.html</code>, <code>contact.html</code>) with active-page navigation indicators.</td>
+            </tr>
+            <tr>
+              <th scope="row">Color Scheme &amp; Typography</th>
+              <td>Bright teal (<code>#1abc9c</code>) and dark navy with Montserrat/Lato fonts.</td>
+              <td>Custom high-contrast Slate &amp; Cobalt palette (WCAG AAA contrast ratios) with system-native sans-serif typography and optional Dark Mode support.</td>
+            </tr>
+            <tr>
+              <th scope="row">Layout &amp; CSS</th>
+              <td>Relies heavily on Bootstrap utility classes and nested divs.</td>
+              <td>Refactored using semantic HTML5 landmarks (<code>main</code>, <code>section</code>, <code>article</code>), native CSS Grid/Flexbox, and custom responsive media queries.</td>
+            </tr>
+            <tr>
+              <th scope="row">Added "Extras" (Week 3)</th>
+              <td>Static portfolio modals only.</td>
+              <td>Adds <strong>Font Awesome</strong> icons, an interactive <strong>JavaScript project category filter</strong>, a <strong>Lightbox/Carousel</strong> preview, and a <strong>Sticky Footer</strong>.</td>
+            </tr>
+            <tr>
+              <th scope="row">Accessibility (WAVE)</th>
+              <td>Low contrast on teal buttons and missing skip navigation link.</td>
+              <td>Adds visible <em>Skip to Main Content</em> link, descriptive <code>alt</code> text, proper heading order, focus-visible rings, and <code>prefers-reduced-motion</code> support.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- SECTION 4: VISUAL SYSTEM & VALIDATION PLAN -->
+    <section id="standards" class="card-section" aria-labelledby="standards-heading">
+      <h2 id="standards-heading">4. Visual System, Extras &amp; Validation Checklist</h2>
+
+      <div class="two-col">
+        <article class="sub-card">
+          <h3>Planned Accessible Color Palette</h3>
+          <ul class="swatch-list">
+            <li>
+              <span class="swatch swatch-primary" aria-hidden="true"></span>
+              <div>
+                <strong>Deep Slate (<code>#0F172A</code>)</strong> — Primary text &amp; headers (Contrast on white: 17.8:1 AAA)
+              </div>
+            </li>
+            <li>
+              <span class="swatch swatch-accent" aria-hidden="true"></span>
+              <div>
+                <strong>Cobalt Blue (<code>#1D4ED8</code>)</strong> — Links &amp; primary actions (Contrast on white: 6.7:1 AA/AAA)
+              </div>
+            </li>
+            <li>
+              <span class="swatch swatch-surface" aria-hidden="true"></span>
+              <div>
+                <strong>Soft Cloud (<code>#F8FAFC</code>)</strong> — Page background surface
+              </div>
+            </li>
+            <li>
+              <span class="swatch swatch-border" aria-hidden="true"></span>
+              <div>
+                <strong>Cool Border (<code>#CBD5E1</code>)</strong> — Wireframe dividers &amp; card borders
+              </div>
+            </li>
+          </ul>
+        </article>
+
+        <article class="sub-card">
+          <h3>Quality Assurance Plan (Weeks 3–6)</h3>
+          <ul class="check-list">
+            <li><strong>W3C HTML5 Validator:</strong> Zero errors across all 4 pages.</li>
+            <li><strong>W3C CSS Validator:</strong> Clean, valid external stylesheet.</li>
+            <li><strong>WAVE Accessibility Tool:</strong> Zero errors, zero contrast errors, verified ARIA and heading hierarchy.</li>
+            <li><strong>Cross-Device Testing:</strong> Tested in Chrome/Firefox DevTools at 375px, 768px, and 1280px viewports.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>Web Design for Everybody Capstone (University of Michigan / Coursera) — Week 2 Design Sketch Demo (Option 2).</p>
+      <p>Created by <strong>[Nguyen Hai Duong]</strong> • Base template attribution: Start Bootstrap Freelancer.</p>
+    </div>
+  </footer>
+
+  <script>
+    const wireframeData = {
+      home: {
+        description: "<strong>Home Page Plan:</strong> Introduces the portfolio with a sticky navigation bar, hero introduction, featured projects preview (1-col on mobile, 2-col on tablet, 3-col on desktop), and a sticky footer.",
+        mobile: `
+          <div class="wf-box wf-hero">HERO BANNER<br><small>Avatar + Intro + CTA</small></div>
+          <div class="wf-label">Featured Projects (1 Col)</div>
+          <div class="wf-box">Project Card 1</div>
+          <div class="wf-box">Project Card 2</div>
+          <div class="wf-box">Project Card 3</div>
+        `,
+        tablet: `
+          <div class="wf-box wf-hero">HERO BANNER (Full Width)<br><small>Intro + Primary CTA</small></div>
+          <div class="wf-label">Featured Projects (2-Col Grid)</div>
+          <div class="wf-grid-2">
+            <div class="wf-box">Project Card 1</div>
+            <div class="wf-box">Project Card 2</div>
+            <div class="wf-box">Project Card 3</div>
+            <div class="wf-box">View All CTA</div>
+          </div>
+        `,
+        desktop: `
+          <div class="wf-grid-hero">
+            <div class="wf-box wf-hero">HERO TEXT &amp; CTA<br><small>Headline + Short Bio + Buttons</small></div>
+            <div class="wf-box wf-media">PROFILE IMAGE<br><small>1:1 Aspect</small></div>
+          </div>
+          <div class="wf-label">Featured Projects (3-Col Grid)</div>
+          <div class="wf-grid-3">
+            <div class="wf-box">Project Card 1<br><small>Thumb + Tech Tags</small></div>
+            <div class="wf-box">Project Card 2<br><small>Thumb + Tech Tags</small></div>
+            <div class="wf-box">Project Card 3<br><small>Thumb + Tech Tags</small></div>
+          </div>
+        `
+      },
+      about: {
+        description: "<strong>About Page Plan:</strong> Presents personal background, technical skills matrix, and academic timeline. Shifts from stacked sections on mobile to a 2-column biography + sidebar skills panel on desktop.",
+        mobile: `
+          <div class="wf-box wf-media">PORTRAIT PHOTO</div>
+          <div class="wf-box">Biography &amp; Background</div>
+          <div class="wf-box">Technical Skills List</div>
+          <div class="wf-box">Education Timeline</div>
+        `,
+        tablet: `
+          <div class="wf-grid-2">
+            <div class="wf-box wf-media">PORTRAIT PHOTO</div>
+            <div class="wf-box">Biography &amp; Goals</div>
+          </div>
+          <div class="wf-box">Skills Matrix (2 Columns)</div>
+          <div class="wf-box">Education &amp; Certifications</div>
+        `,
+        desktop: `
+          <div class="wf-grid-sidebar">
+            <div class="wf-stack">
+              <div class="wf-box wf-media">PORTRAIT</div>
+              <div class="wf-box">Quick Facts &amp; Resume Link</div>
+            </div>
+            <div class="wf-stack">
+              <div class="wf-box">Detailed Biography &amp; Philosophy</div>
+              <div class="wf-grid-2">
+                <div class="wf-box">Frontend &amp; Web Skills</div>
+                <div class="wf-box">Java, DB &amp; Networking</div>
+              </div>
+              <div class="wf-box">Education Timeline</div>
+            </div>
+          </div>
+        `
+      },
+      projects: {
+        description: "<strong>Projects Page Plan:</strong> Features an interactive JavaScript filter bar (All / Web / Java / Database) and a responsive project gallery with lightbox preview modals.",
+        mobile: `
+          <div class="wf-box wf-pill">Filter Dropdown: [All &#9662;]</div>
+          <div class="wf-box">Project 1 + Screenshot</div>
+          <div class="wf-box">Project 2 + Screenshot</div>
+          <div class="wf-box">Project 3 + Screenshot</div>
+        `,
+        tablet: `
+          <div class="wf-box wf-pill">Filter Tabs: [All] [Web] [Java] [DB]</div>
+          <div class="wf-grid-2">
+            <div class="wf-box">Project 1<br><small>Lightbox Preview</small></div>
+            <div class="wf-box">Project 2<br><small>Lightbox Preview</small></div>
+            <div class="wf-box">Project 3<br><small>Lightbox Preview</small></div>
+            <div class="wf-box">Project 4<br><small>Lightbox Preview</small></div>
+          </div>
+        `,
+        desktop: `
+          <div class="wf-box wf-pill">Interactive JS Filter Bar: [All Projects] [HTML/CSS/JS] [Java OOP] [SQL / Network]</div>
+          <div class="wf-grid-3">
+            <div class="wf-box">Project 1<br><small>Modal + GitHub Link</small></div>
+            <div class="wf-box">Project 2<br><small>Modal + GitHub Link</small></div>
+            <div class="wf-box">Project 3<br><small>Modal + GitHub Link</small></div>
+            <div class="wf-box">Project 4<br><small>Modal + GitHub Link</small></div>
+            <div class="wf-box">Project 5<br><small>Modal + GitHub Link</small></div>
+            <div class="wf-box">Project 6<br><small>Modal + GitHub Link</small></div>
+          </div>
+        `
+      },
+      contact: {
+        description: "<strong>Contact Page Plan:</strong> Provides an accessible HTML5 validated contact form alongside social links and location info. Stacks vertically on mobile and splits into a 2-column form + info card on tablet/desktop.",
+        mobile: `
+          <div class="wf-box">Contact Heading &amp; Intro</div>
+          <div class="wf-box wf-form">Accessible Form<br><small>Name, Email, Message, Submit</small></div>
+          <div class="wf-box">GitHub / LinkedIn / Email</div>
+        `,
+        tablet: `
+          <div class="wf-grid-2">
+            <div class="wf-box wf-form">HTML5 Validated Form<br><small>Labels + Error Messages</small></div>
+            <div class="wf-stack">
+              <div class="wf-box">Direct Email &amp; Location</div>
+              <div class="wf-box">Social Links (Font Awesome)</div>
+            </div>
+          </div>
+        `,
+        desktop: `
+          <div class="wf-grid-hero">
+            <div class="wf-box wf-form">Accessible Contact Form (65% Width)<br><small>Explicit labels, focus states, JS feedback</small></div>
+            <div class="wf-stack">
+              <div class="wf-box">Contact Details &amp; Availability</div>
+              <div class="wf-box">GitHub / LinkedIn / Coursera Profile</div>
+              <div class="wf-box">Response Time Note</div>
+            </div>
+          </div>
+        `
+      }
+    };
+
+    const buttons = document.querySelectorAll(".switch-btn");
+    const mobileEl = document.getElementById("wf-mobile");
+    const tabletEl = document.getElementById("wf-tablet");
+    const desktopEl = document.getElementById("wf-desktop");
+    const descEl = document.getElementById("page-description");
+
+    function renderWireframe(pageKey) {
+      const data = wireframeData[pageKey];
+      if (!data) return;
+      mobileEl.innerHTML = data.mobile;
+      tabletEl.innerHTML = data.tablet;
+      desktopEl.innerHTML = data.desktop;
+      descEl.innerHTML = data.description;
+
+      buttons.forEach((btn) => {
+        const isActive = btn.dataset.page === pageKey;
+        btn.classList.toggle("active", isActive);
+        btn.setAttribute("aria-pressed", String(isActive));
+      });
+    }
+
+    buttons.forEach((btn) => {
+      btn.addEventListener("click", () => renderWireframe(btn.dataset.page));
+    });
+
+    renderWireframe("home");
+  </script>
+</body>
+</html>
